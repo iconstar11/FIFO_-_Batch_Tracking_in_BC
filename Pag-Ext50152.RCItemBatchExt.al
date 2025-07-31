@@ -1,4 +1,4 @@
-pageextension 50152 "RC Item Batch Ext" extends "Project Manager Role Center"
+pageextension 50152 "RC Item Batch Ext" extends "Accountant Role Center"
 {
 
     layout
@@ -16,6 +16,7 @@ pageextension 50152 "RC Item Batch Ext" extends "Project Manager Role Center"
         addlast(Navigation)
         {
             group("Inventory Management")
+
             {
                 action(OpenBatchList)
                 {

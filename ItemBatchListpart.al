@@ -18,27 +18,5 @@ page 50154 "Item Batch ListPart"
         }
     }
 
-    actions
-    {
-        area(Processing)
-        {
-            group("Inventory Management")
-            {
-                action(OpenBatchList)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Item Batch List';
-                    Image = List;
-                    RunObject = Page "Item Batch List";
-                }
-                action(OpenBatchCard)
-                {
-                    ApplicationArea = All;
-                    Caption = 'New Batch Entry';
-                    Image = NewDocument;
-                    RunObject = Page "Item Batch Card";
-                }
-            }
-        }
-    }
+
 }

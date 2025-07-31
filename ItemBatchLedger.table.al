@@ -11,38 +11,38 @@ table 50151 "Item Batch Ledger"
 
         field(2; "Item No."; Code[20])
         {
-            DataClassification = Product;
+            DataClassification = CustomerContent;
             TableRelation = Item."No.";
         }
 
         field(3; "Batch No."; Code[20])
         {
-            DataClassification = ProductTracking;
+            DataClassification = CustomerContent;
         }
 
         field(4; "Entry Date"; Date)
         {
-            DataClassification = Date;
+            DataClassification = SystemMetadata;
         }
 
         field(5; "Expiration Date"; Date)
         {
-            DataClassification = Date;
+            DataClassification = SystemMetadata;
         }
 
         field(6; "Quantity Available"; Decimal)
         {
-            DataClassification = Quantity;
+            DataClassification = CustomerContent;
         }
 
         field(7; "Used Quantity"; Decimal)
         {
-            DataClassification = Quantity;
+            DataClassification = CustomerContent;
         }
 
         field(8; "Remaining Quantity"; Decimal)
         {
-            DataClassification = Quantity;
+            DataClassification = CustomerContent;
             Editable = false;
         }
     }
