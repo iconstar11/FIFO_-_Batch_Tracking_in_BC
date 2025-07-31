@@ -1,19 +1,25 @@
-pageextension 50152 "RC Item Batch Ext" extends "Accountant Role Center"
+// pageextension 50152 "RC Item Batch Ext" extends "Accountant Role Center"
+
+page 50155 "Role Center"
+
 {
+    PageType = RoleCenter;
+    Caption = 'Role Center';
+    ApplicationArea = All;
 
     layout
     {
-        addlast(RoleCenter)
-        {
-            part(ItemBatchList; "Item Batch ListPart")
-            {
-                ApplicationArea = All;
-            }
-        }
+        // area(RoleCenter)
+        // {
+        //     part(ItemBatchList; "Item Batch ListPart")
+        //     {
+        //         ApplicationArea = All;
+        //     }
+        // }
     }
     actions
     {
-        addlast(Navigation)
+        area(Sections)
         {
             group("Inventory Management")
 
@@ -35,4 +41,11 @@ pageextension 50152 "RC Item Batch Ext" extends "Accountant Role Center"
             }
         }
     }
+}
+
+profile "Batch Management"
+{
+    Caption = 'Batch Management';
+    RoleCenter = "Role Center";
+    ProfileDescription = 'Role center for managing item batches.';
 }

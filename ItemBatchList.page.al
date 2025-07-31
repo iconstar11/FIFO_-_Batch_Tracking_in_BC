@@ -4,6 +4,7 @@ page 50151 "Item Batch List"
     SourceTable = "Item Batch Ledger";
     ApplicationArea = All;
     Caption = 'Item Batches';
+    Editable = false;
     CardPageId = "Item Batch Card";
 
     layout

@@ -30,20 +30,24 @@ table 50151 "Item Batch Ledger"
             DataClassification = SystemMetadata;
         }
 
-        field(6; "Quantity Available"; Decimal)
+        field(6; "Quantity Available"; Integer)
         {
             DataClassification = CustomerContent;
         }
 
-        field(7; "Used Quantity"; Decimal)
+        field(7; "Used Quantity"; Integer)
         {
             DataClassification = CustomerContent;
         }
 
-        field(8; "Remaining Quantity"; Decimal)
+        field(8; "Remaining Quantity"; Integer)
         {
             DataClassification = CustomerContent;
             Editable = false;
+        }
+        field(9; "No. Series"; Code[20])
+        {
+            DataClassification = CustomerContent;
         }
     }
 
@@ -56,4 +60,18 @@ table 50151 "Item Batch Ledger"
     begin
         "Remaining Quantity" := "Quantity Available" - "Used Quantity";
     end;
+
+
+    trigger OnInsert()
+    var
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesCode: Code[20];
+    begin
+        if "Batch No." = '' then begin
+            NoSeriesCode := 'BATCH'; // Must exist in No. Series table!
+            "Batch No." := NoSeriesMgt.GetNextNo(NoSeriesCode, Today, true);
+        end;
+    end;
+
+
 }
