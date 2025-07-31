@@ -1,19 +1,26 @@
-pageextension 50152 "RC Item Batch Ext" extends "Project Manager Role Center"
+page 50154 "Item Batch ListPart"
 {
+    PageType = ListPart;
+    SourceTable = "Item Batch Ledger";
+    ApplicationArea = All;
+    Caption = 'Item Batches';
 
     layout
     {
-        addlast(RoleCenter)
+        area(content)
         {
-            part(ItemBatchList; "Item Batch ListPart")
+            repeater(General)
             {
-                ApplicationArea = All;
+                field("Item No."; Rec."Item No.") { }
+                field("Batch No."; Rec."Batch No.") { }
+                field("Remaining Quantity"; Rec."Remaining Quantity") { }
             }
         }
     }
+
     actions
     {
-        addlast(Navigation)
+        area(Processing)
         {
             group("Inventory Management")
             {
